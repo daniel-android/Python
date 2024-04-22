@@ -1,19 +1,12 @@
-#from sage.all import *
-
 import matplotlib.pyplot as plt 
 import numpy as np 
 import math 
 import time
 
 #Description: This program receives a list of reduced words U in the alphabet
-#              {1,2} and test if U is a NIelsen reduced set
+#              {1,2} and test if U is a Nielsen reduced set
 
 
-#U= [[1, 2], [1,1,2,2], [1,1,1, 2,2,2],[1,2,1,2]];
-#U= [[1, 2], [1,1,2,-1], [1,1,1, 2,-1,-1]];
-#U= [[1, 2, -1, 2], [-2], [1, 2, -1], [1, 2, -1, -2, 1, 1, 2]]
-U= [[-2], [1, 2, -1], [-1, -1]]
-#U= [[1, 2, -1], [2], [1, 1, 2]]
 U= [[-2], [2, -1, -2], [-1, -1], [1, 2, 1]]
 
 
