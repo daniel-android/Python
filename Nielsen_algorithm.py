@@ -141,7 +141,6 @@ def part2(U):
 B=True;
 while B==True:
 	B=part2(U);
-#print('After part (2): U=',U)
 
 ####### PART 3
 
@@ -179,7 +178,6 @@ while A==True:
 				#checking if q or q^-1 are initial or final segments of U[i]
 				if U[i][:len_q]==q or U[i][-len_qinv:]==qinv:# is there any U[i]=qc^-1 or U[i]=cq^-1
 					flash=0
-					#print('U_shorts_list =', U_shorts_list)
 					break #stops the for loop
 
 		#I want to get the word c or c^-1
@@ -187,10 +185,6 @@ while A==True:
 			v_=U[i].copy()
 			del v_[:len_q]
 			cinv=v_
-			#print('q=', q,', c^-1=', cinv,', U[',i,']=qc^-1= ', U[i])
-			#print('\n')
-			#v_=cinv.copy()
-			#c=inverting_a_word(v_)
 			#checking for the minimum length word in {pc^-1,cp^-1}
 			w1=reducing_a_word(p+cinv)
 			v_=w1.copy()
@@ -199,15 +193,10 @@ while A==True:
 				U[i]=w1
 			else:
 				U[i]=w2
-
-			#print('After part (3): U=',U)
-			#print('\n')
 			#calling the part (2)
 			B=True;
 			while B==True:
 				B=part2(U);
-			#print('After part (2): U=',U)
-			#print('\n')
 			
 			#we will have to restart the part (3) again
 			A=True
@@ -217,10 +206,6 @@ while A==True:
 			v_=U[i].copy()
 			del v_[-len_qinv:]
 			c=v_
-			#print('q^-1=', qinv,', c=',c,', U[',i,']=cq^-1= ', U[i])
-			#print('\n')
-			#v_=c.copy()
-			#cinv=inverting_a_word(v_)
 			#checking for the minimum length word in {pc^-1,cp^-1}
 			w1=reducing_a_word(c+pinv)
 			v_=w1.copy()
@@ -229,15 +214,9 @@ while A==True:
 				U[i]=w1
 			else:
 				U[i]=w2
-
-			#print('After part (3): U=',U)
-			#print('\n')
-			#calling the part (2)
 			B=True;
 			while B==True:
 				B=part2(U);
-			#print('After part (2): U=',U)
-			#print('\n')
 			
 			#we will have to restart the part (3) again
 			A=True
@@ -245,6 +224,6 @@ while A==True:
 
 	if flash==1:#we still didnt find a shortest word satisfying the conditions in (3)
 		Ucopy.remove(U_shorts_list)#removing the 
-		#we dont have to restart the part (3), just keep running it
+		#we dont have to restart the part (3)
 		A=True
 
